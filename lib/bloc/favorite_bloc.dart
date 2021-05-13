@@ -9,20 +9,22 @@ part 'favorite_event.dart';
 part 'favorite_state.dart';
 
 class FavoriteBloc extends Bloc<FavoriteEvent, FavoriteState> {
-  FavoriteBloc() : super(FavoriteState());
+  FavoriteBloc() : super(FavoriteState([]));
 
   @override
   Stream<FavoriteState> mapEventToState(
     FavoriteEvent event,
   ) async* {
     if (event is ToggleFavorites) {
-      yield* _addToFavorites(event);
+      yield* addToFavorites(event);
     }
   }
 
-  Stream<FavoriteState> _addToFavorites(ToggleFavorites event) async* {
+  Stream<FavoriteState> addToFavorites(ToggleFavorites event) async* {
     state.favoriteList.contains(event.word)
         ? state.favoriteList.remove(event.word)
         : state.favoriteList.add(event.word);
+
+    yield FavoriteState(state.favoriteList);
   }
 }
