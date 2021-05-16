@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:startup_namer/bloc/favorite_bloc.dart';
+import 'package:startup_namer/bloc/favorite/favorite_bloc.dart';
 
 class RandomWords extends StatefulWidget {
   const RandomWords({Key key}) : super(key: key);
@@ -52,6 +52,7 @@ class _RandomWordsState extends State<RandomWords> {
           return _buildRow(_suggestions[index]);
         });
   }
+
   //
   // void _pushSaved() {
   //   Navigator.of(context).push(

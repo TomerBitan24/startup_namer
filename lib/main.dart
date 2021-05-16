@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:startup_namer/bloc/favorite_bloc.dart';
+import 'package:startup_namer/bloc/favorite/favorite_bloc.dart';
 import 'random_words.dart';
 
 void main() => runApp(MyApp());
